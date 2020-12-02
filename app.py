@@ -14,9 +14,9 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-trends_sim = pd.read_csv('trend_simd_20201201.csv')
-trends_agesex = pd.read_csv('trend_agesex_20201201.csv', parse_dates=['Date'], index_col=0)
-total_cases = pd.read_csv('total_cases_by_la_20201201.csv')
+trends_sim = pd.read_csv('/Users/calumwalker/github/CovidDashboard/total_cases_by_la_20201201.csv')
+trends_agesex = pd.read_csv('/Users/calumwalker/github/CovidDashboard/trend_agesex_20201201.csv', parse_dates=['Date'], index_col=0)
+total_cases = pd.read_csv('/Users/calumwalker/github/CovidDashboard/total_cases_by_la_20201201.csv')
 
 
 
@@ -67,15 +67,22 @@ df_merged = reduce(lambda  left,right: pd.merge(left,right,on=['Date'],
 
 
 fig = px.line(df_merged, x=df_merged.index, y=["15 to 19", "20 to 24", "25 to 44", "45 to 64", "65 to 74", "75 to 84", "85+"])
-fig.show()
 
 
-app.layout = html.Div([
+
+app.layout = html.Div(children=[
+    html.H1(children='Scotland COVID Dashboard'),
+
+    html.Div(children='''
+        From the Governments Website
+    '''),
+
     dcc.Graph(
-        id='life-exp-vs-gdp',
+        id='example-graph',
         figure=fig
     )
 ])
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)
