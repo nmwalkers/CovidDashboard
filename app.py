@@ -70,6 +70,7 @@ fig = px.line(df_merged, x=df_merged.index, y=["15 to 19", "20 to 24", "25 to 44
 
 
 
+
 app.layout = html.Div(children=[
     html.H1(children='Scotland COVID Dashboard'),
 
