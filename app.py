@@ -20,11 +20,11 @@ external_stylesheets=[dbc.themes.CYBORG]
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-trends_sim = pd.read_csv('/Users/calumwalker/github/CovidDashboard/total_cases_by_la_20201201.csv')
+
 trends_agesex = pd.read_csv('/Users/calumwalker/github/CovidDashboard/trend_agesex_20201201.csv', parse_dates=['Date'], index_col=0)
 total_cases = pd.read_csv('/Users/calumwalker/github/CovidDashboard/total_cases_by_la_20201201.csv')
 
-with urlopen('https://raw.githubusercontent.com/nmwalkers/CovidDashboard/main/Scotland.geojson') as response:
+with urlopen('https://raw.githubusercontent.com/nmwalkers/CovidDashboard/main/scotland.geojson') as response:
     areasGEO = json.load(response)
 
 df = pd.read_csv("https://raw.githubusercontent.com/nmwalkers/CovidDashboard/main/total_cases_simd_20201203.csv")
