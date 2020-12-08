@@ -19,8 +19,7 @@ from dash.dependencies import Input, Output
 external_stylesheets=[dbc.themes.CYBORG]
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-line: server = app.server
-
+server = app.server
 
 
 total_cases = pd.read_csv("https://raw.githubusercontent.com/nmwalkers/CovidDashboard/main/total_cases_by_la_20201201.csv")
