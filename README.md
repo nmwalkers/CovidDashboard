@@ -1,3 +1,3 @@
 # CovidDashboard
 
-Link to working dashboard for marking: https://dashboard-app-cw-walker.herokuapp.com/
+Link to dashboard deployed on Heroku for marking: https://dashboard-app-cw-walker.herokuapp.com/
